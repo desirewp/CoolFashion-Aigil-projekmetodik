@@ -2,9 +2,9 @@ import "./Footer.css";
 
 const Footer = () => {
     return (
-        <div className="footer-div">
-            <div className="footer-column">
+        <footer>
             {/* Märken */}
+            <div className="footer-column">
                 <h3>MÄRKEN</h3>
                 <a href="">Länktext</a>
                 <a href="">Länktext</a>
@@ -29,6 +29,7 @@ const Footer = () => {
                 <a href="">Användarvillkor</a>
                 <a href="">Köpevillkor</a>
             </div>
+            
             {/* Nyhetsbrev */}
             <div className="footer-column newsletter">
                 <h3>NYHETSBREV</h3>
@@ -38,7 +39,7 @@ const Footer = () => {
                     <button>Prenumerera</button>
                 </div>
             </div>
-        </div>
+        </footer>
     ) }
 
     export default Footer;
