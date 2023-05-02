@@ -3,6 +3,9 @@ import Bild from "../assets/placeholder.jpg"
 
 const Landing = () => {
   return (
+    <div className="Container">
+
+    
     <div className="Landing-start">
         <div className="picholder">
         <div className="pic">    
@@ -44,6 +47,8 @@ const Landing = () => {
         </div>
         
       
+    </div>
+    
     </div>
   );
 };
