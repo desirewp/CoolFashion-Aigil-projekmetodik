@@ -64,14 +64,14 @@ const NavigationTop = () => {
 		<li><a href="#">Populärt</a></li>
 		<li><a href="#">Kläder</a>
 			<ul>
-				<li>
+				<li className="column">
                     <h3>Killar</h3>
                     <a href="#">T-shirts</a>
                     <a href="#">Byxor</a>
                     <a href="#">Skor</a>
                     <a href="#">Alla killkläder</a>
                     </li>
-				<li>
+				<li className="column">
                     <h3>Tjejer</h3>
                     <a href="#">Jackor</a>
                     <a href="#">Klänningar</a>

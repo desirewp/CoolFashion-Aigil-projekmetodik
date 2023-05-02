@@ -54,3 +54,10 @@ nav {
     left: 0px;
   }
   
+  .column a{
+float:none;
+
+  }
+  .column a:hover{
+    color: black;
+  }
