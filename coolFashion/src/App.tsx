@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <NavigationTop></NavigationTop>
+    
     </>
   )
 }
