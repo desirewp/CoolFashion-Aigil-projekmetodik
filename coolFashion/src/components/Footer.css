@@ -1,0 +1,14 @@
+.footer-div {
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(188, 77, 77);
+}
+.footer-column {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column; 
+}
+.newsletter {
+    width: 20%;
+}
