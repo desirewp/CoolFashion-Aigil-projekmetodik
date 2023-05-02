@@ -1,5 +1,21 @@
-ul{
-    list-style-type: none;
-    display: flex;
-    padding
+nav {
+  width: 100vw;
+  height: 65px;
+  background-color: pink;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
+
+ul {
+  width: 60%;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+li{
+    cursor: pointer;
+}
+
+
