@@ -67,15 +67,17 @@ const NavigationTop = () => {
           <li>
             <a href="#">Kläder</a>
             <ul className="sub-menu">
-              <li className="column">
-                <div className="col-content">
-                  <h3>Killar</h3>
-                  <a href="#">T-shirts</a>
-                  <a href="#">Byxor</a>
-                  <a href="#">Skor</a>
-                  <a href="#">Alla killkläder</a>
-                </div>
-              </li>
+              <div className="sub-menu-container">
+                <li className="column">
+                  <div className="col-content">
+                    <h3>Killar</h3>
+                    <a href="#">T-shirts</a>
+                    <a href="#">Byxor</a>
+                    <a href="#">Skor</a>
+                    <a href="#">Alla killkläder</a>
+                  </div>
+                </li>
+              </div>
               <li className="column">
                 <div className="col-content">
                   <h3>Tjejer</h3>

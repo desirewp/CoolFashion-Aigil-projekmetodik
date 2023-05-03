@@ -1,62 +1,84 @@
 nav {
-    text-align:center;
-    width: 100%;
-    background: #bebebe;
-    height: 60px;
-    position:relative;
-  }
-  
-  nav ul {
-    background: #bebebe;
-    list-style:none;
-    padding:0 20px;
-    height: auto;
-  }
-  
-    nav ul li {
-    display: inline-block;
-  }
-    
-  nav ul li a {
-    color:#333333;
-    display:block;
-    padding:0px 40px;
-    text-decoration:none;
-    float: left;
-    height: 60px;
-    line-height: 60px;
-  }
-  
-  /* Det här som får det att fungera */
-  nav ul li:hover > ul {
-    display:block;
-  }
-  
-  nav ul ul {
-    background: #BEBEBE;
-    text-align: center;
-    display:none;
-    width: 100%;
-    position: absolute;
-    top: 60px;
-    left: 0px;
-  }
-  
-.sub-menu{
-  padding-top: 10px;
+  text-align: center;
+  width: 100%;
+  background: #bebebe;
+  height: 60px;
+  position: relative;
 }
 
-.col-content{
+nav ul {
+  background: #bebebe;
+  list-style: none;
+  padding: 0 20px;
+  height: auto;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  color: #333333;
+  display: block;
+  padding: 0px 40px;
+  text-decoration: none;
+  float: left;
+  height: auto;
+  line-height: 60px;
+}
+
+/* Det här som får det att fungera */
+nav ul li:hover > ul {
+  display: block;
+}
+
+nav ul ul {
+  background: #bebebe;
+  text-align: center;
+  display: none;
+  width: 100%;
+  position: absolute;
+  top: 60px;
+  left: 0px;
+}
+
+.sub-menu {
+  padding: 10px 0;
+}
+
+.column{
+  /* display: flex;
+  justify-content: center; */
+  /* width: 45%; */
+}
+
+.col-content {
   min-width: 250px;
   display: flex;
   flex-direction: column;
   text-align: left;
+
+}
+
+a {
+  font-size: 12pt;
 }
 
 .column a {
-  float:none;
+  float: none;
   padding: 0;
   margin: 0px;
+  font-size: 11pt;
+  height: auto;
+  line-height: 30px;
+}
 
-  }
- 
+h3 {
+  font-weight: 300;
+  font-size: 13pt;
+  margin-bottom: 10px;
+}
+
+.sub-menu-container{
+  display: flex;
+}
