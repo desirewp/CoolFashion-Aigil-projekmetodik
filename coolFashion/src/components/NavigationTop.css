@@ -27,7 +27,6 @@ nav {
     line-height: 60px;
   }
   
-
   /* Det här som får det att fungera */
   nav ul li:hover > ul {
     display:block;
