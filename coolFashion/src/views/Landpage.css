@@ -1,0 +1,62 @@
+.Container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Landing-start {
+    display: flex;
+    align-items: center;
+    height: 1200px;
+    width: 1200px;
+    background-color: aquamarine;
+    flex-direction: column;
+}
+
+.picholder{
+    display: flex;
+    width: 700px;
+    height: 400px;
+    padding: 30px;
+}
+
+.pic {
+    display: flex;
+    background-image: url(../assets/placeholder.jpg);
+    width: 100%;
+    height: 100%;
+    
+}
+
+.freeship {
+margin-top: 290px;
+margin-left: 390px;
+}
+
+.bildrad {
+display: flex;
+gap: 23px;
+
+}
+
+.bildopris {
+
+}
+
+.bildoprisbild {
+    width: 110px;
+    height: 200px;
+}
+
+.banner{
+    display: flex;
+    background-image: url(../assets/placeholder.jpg);
+    width: 100%;
+    height: 250px;
+    margin-top: 40px;
+    justify-content: center;
+    
+}
+.skate{
+    margin-top: 200px; 
+}
