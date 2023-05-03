@@ -7,7 +7,9 @@ const NavigationTop = () => {
         <p className="logotype">CoolFashion</p>
         <ul className="link-list">
           <li>
-            <a href="#">Start</a>
+            <a href="#" className="active">
+              Start
+            </a>
           </li>
           <li>
             <a href="#">Populärt</a>
@@ -41,13 +43,12 @@ const NavigationTop = () => {
             </ul>
           </li>
           <li>
-          <div className="flex-row-center">
-            <a href="#">Accessoarer</a>
-            <span className="material-symbols-outlined down-arrow">
-              keyboard_arrow_down
-            </span>
-</div>
-            {/* Start här */}
+            <div className="flex-row-center">
+              <a href="#">Accessoarer</a>
+              <span className="material-symbols-outlined down-arrow">
+                keyboard_arrow_down
+              </span>
+            </div>
             <ul className="sub-menu">
               <li className="column">
                 <div className="col-content">
@@ -71,11 +72,11 @@ const NavigationTop = () => {
           </li>
 
           <li>
-          <div className="flex-row-center">
-            <a href="#">Outlet</a>
-            <span className="material-symbols-outlined down-arrow">
-              keyboard_arrow_down
-            </span>
+            <div className="flex-row-center">
+              <a href="#">Outlet</a>
+              <span className="material-symbols-outlined down-arrow">
+                keyboard_arrow_down
+              </span>
             </div>
             <ul className="sub-menu">
               <li className="column">
@@ -108,10 +109,9 @@ const NavigationTop = () => {
         </ul>
 
         <div>
-        <span className="material-symbols-outlined">search</span>
-        <span className="material-symbols-outlined">shopping_cart</span>
-        <span className="material-symbols-outlined">person</span>
-
+          <span className="material-symbols-outlined">search</span>
+          <span className="material-symbols-outlined">shopping_cart</span>
+          <span className="material-symbols-outlined">person</span>
         </div>
         <a href="#" className="login-btn">
           Logga in

@@ -1,29 +1,22 @@
 nav {
   text-align: center;
   width: 100%;
-  background: #BDEAAD;
+  background: #bdeaad;
   height: 60px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
-
-.link-list{
+.link-list {
   min-width: 50%;
-  display:flex;
+  display: flex;
   justify-content: space-around;
 }
 
-
 nav ul li {
   display: inline-block;
-
-}
-
-nav ul li a {
-  color: #333333;
-   height: auto;
+  padding: 0 6px;
 }
 
 /* Det här som får det att fungera */
@@ -33,12 +26,16 @@ nav ul li:hover > ul {
 
 nav ul ul {
   background: #d8ffca;
-  text-align: center;
   display: none;
   width: 100%;
   position: absolute;
   top: 60px;
   left: 0px;
+}
+
+.flex-row-center {
+  display: flex;
+  justify-content: center;
 }
 
 .sub-menu {
@@ -52,19 +49,12 @@ nav ul ul {
   text-align: left;
 }
 
-a {
-  font-size: 12pt;
-  text-decoration: none;
-}
-
 .column a {
-  float: none;
-  padding: 0;
-  margin: 0px;
   font-size: 11pt;
-  height: auto;
   line-height: 30px;
 }
+
+/* ---------Typografi----------------- */
 
 h3 {
   font-weight: 300;
@@ -72,36 +62,53 @@ h3 {
   margin-bottom: 10px;
 }
 
-.sub-menu-container {
-  display: flex;
+a {
+  color: #000000;
+  font-size: 12pt;
+  text-decoration: none;
 }
 
+li:hover {
+  background-color: #d8ffca;
+  font-weight: 900;
+}
+
+li:hover li {
+  font-weight: 400;
+}
+
+li li a:hover {
+  font-weight: 900;
+}
+
+nav ul li a {
+  line-height: 60px;
+}
+
+/* ----------Ikoner------------------ */
 .logotype {
   font-weight: 900;
   font-style: italic;
   font-size: 20pt;
   display: inline-block;
   margin-right: 5px;
+  cursor: pointer;
 }
 
-.login-btn{
-  color: black;
+.login-btn {
   margin-top: -5px;
-  
 }
 
-
-span{
+span {
   margin: 5px;
   cursor: pointer;
 }
 
-.down-arrow{
-  margin: -1px 0 0 6px;
+.down-arrow {
+  margin-top: 18px;
 }
 
-
-.flex-row-center{
-  display: flex; 
- justify-content: center;
+/* Denna klass markerar den sida som man är på med fetstil */
+.active {
+  font-weight: 700;
 }
