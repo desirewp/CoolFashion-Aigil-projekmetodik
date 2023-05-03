@@ -4,60 +4,8 @@ const NavigationTop = () => {
   return (
     <>
       <nav>
-        {/* Logotyp här */}
-        <div className="main-items">
-          <p>CoolFashion</p>
-        </div>
-      </nav>
-      <div className="dropdown">
-        <button className="dropbtn">Accessoarer</button>
-        <div className="dropdown-content">
-          <div className="dropdown-column">
-            <h3>Killar</h3>
-            <ul>
-              <li>Väskor</li>
-              <li>Smycken</li>
-              <li>Klockor</li>
-              <li>Alla killaccessoarer</li>
-            </ul>
-          </div>
-          <div className="dropdown-column">
-            <h3>Tjejer</h3>
-            <ul>
-              <li>Väskor</li>
-              <li>Smycken</li>
-              <li>Klockor</li>
-              <li>Alla tjejaccessoarer</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div className="dropdown">
-        <button className="dropbtn">Outlet</button>
-        <div className="dropdown-content">
-          <div className="dropdown-column">
-            <h3>Killar</h3>
-            <ul>
-              <li>Kläder</li>
-              <li>Skor</li>
-              <li>Sport & träning</li>
-              <li>Alla kategorier</li>
-            </ul>
-          </div>
-          <div className="dropdown-column">
-            <h3>Tjejer</h3>
-            <ul>
-              <li>Kläder</li>
-              <li>Skor</li>
-              <li>Sport & träning</li>
-              <li>Alla kategorier</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <nav>
-        <ul>
+        <p className="logotype">CoolFashion</p>
+        <ul className="link-list">
           <li>
             <a href="#">Start</a>
           </li>
@@ -65,19 +13,22 @@ const NavigationTop = () => {
             <a href="#">Populärt</a>
           </li>
           <li>
-            <a href="#">Kläder</a>
+            <div className="flex-row-center">
+              <a href="#">Kläder</a>
+              <span className="material-symbols-outlined down-arrow">
+                keyboard_arrow_down
+              </span>
+            </div>
             <ul className="sub-menu">
-              <div className="sub-menu-container">
-                <li className="column">
-                  <div className="col-content">
-                    <h3>Killar</h3>
-                    <a href="#">T-shirts</a>
-                    <a href="#">Byxor</a>
-                    <a href="#">Skor</a>
-                    <a href="#">Alla killkläder</a>
-                  </div>
-                </li>
-              </div>
+              <li className="column">
+                <div className="col-content">
+                  <h3>Killar</h3>
+                  <a href="#">T-shirts</a>
+                  <a href="#">Byxor</a>
+                  <a href="#">Skor</a>
+                  <a href="#">Alla killkläder</a>
+                </div>
+              </li>
               <li className="column">
                 <div className="col-content">
                   <h3>Tjejer</h3>
@@ -90,31 +41,64 @@ const NavigationTop = () => {
             </ul>
           </li>
           <li>
+          <div className="flex-row-center">
             <a href="#">Accessoarer</a>
+            <span className="material-symbols-outlined down-arrow">
+              keyboard_arrow_down
+            </span>
+</div>
+            {/* Start här */}
             <ul className="sub-menu">
-              <li>
-                <h3>Killar</h3>
-                <a href="#">Photoshop</a>
+              <li className="column">
+                <div className="col-content">
+                  <h3>Killar</h3>
+                  <a href="#">Väskor</a>
+                  <a href="#">Klockor</a>
+                  <a href="#">Smycken</a>
+                  <a href="#">Alla kategorier</a>
+                </div>
               </li>
-              <li>
-                <h3>Tjejer</h3>
-                <a href="#">Populärt</a>
+              <li className="column">
+                <div className="col-content">
+                  <h3>Tjejer</h3>
+                  <a href="#">Väskor</a>
+                  <a href="#">Klockor</a>
+                  <a href="#">Smycken</a>
+                  <a href="#">Alla kategorier</a>
+                </div>
               </li>
             </ul>
           </li>
+
           <li>
+          <div className="flex-row-center">
             <a href="#">Outlet</a>
+            <span className="material-symbols-outlined down-arrow">
+              keyboard_arrow_down
+            </span>
+            </div>
             <ul className="sub-menu">
-              <li>
-                <h3>Killar</h3>
-                <a href="#">Photoshop</a>
+              <li className="column">
+                <div className="col-content">
+                  <h3>Killar</h3>
+                  <a href="#">Kläder</a>
+                  <a href="#">Skor</a>
+                  <a href="#">Sport & träning</a>
+                  <a href="#">Alla kategorier</a>
+                </div>
               </li>
-              <li>
-                <h3>Tjejer</h3>
-                <a href="#">Populärt</a>
+              <li className="column">
+                <div className="col-content">
+                  <h3>Tjejer</h3>
+                  <a href="#">Kläder</a>
+                  <a href="#">Skor</a>
+                  <a href="#">Sport & träning</a>
+                  <a href="#">Alla kategorier</a>
+                </div>
               </li>
             </ul>
           </li>
+
           <li>
             <a href="#">Kontakt</a>
           </li>
@@ -122,6 +106,16 @@ const NavigationTop = () => {
             <a href="#">FAQ</a>
           </li>
         </ul>
+
+        <div>
+        <span className="material-symbols-outlined">search</span>
+        <span className="material-symbols-outlined">shopping_cart</span>
+        <span className="material-symbols-outlined">person</span>
+
+        </div>
+        <a href="#" className="login-btn">
+          Logga in
+        </a>
       </nav>
     </>
   );

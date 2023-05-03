@@ -1,30 +1,29 @@
 nav {
   text-align: center;
   width: 100%;
-  background: #bebebe;
+  background: #BDEAAD;
   height: 60px;
-  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-nav ul {
-  background: #bebebe;
-  list-style: none;
-  padding: 0 20px;
-  height: auto;
+
+.link-list{
+  min-width: 50%;
+  display:flex;
+  justify-content: space-around;
 }
+
 
 nav ul li {
   display: inline-block;
+
 }
 
 nav ul li a {
   color: #333333;
-  display: block;
-  padding: 0px 40px;
-  text-decoration: none;
-  float: left;
-  height: auto;
-  line-height: 60px;
+   height: auto;
 }
 
 /* Det här som får det att fungera */
@@ -33,7 +32,7 @@ nav ul li:hover > ul {
 }
 
 nav ul ul {
-  background: #bebebe;
+  background: #d8ffca;
   text-align: center;
   display: none;
   width: 100%;
@@ -46,22 +45,16 @@ nav ul ul {
   padding: 10px 0;
 }
 
-.column{
-  /* display: flex;
-  justify-content: center; */
-  /* width: 45%; */
-}
-
 .col-content {
   min-width: 250px;
   display: flex;
   flex-direction: column;
   text-align: left;
-
 }
 
 a {
   font-size: 12pt;
+  text-decoration: none;
 }
 
 .column a {
@@ -79,6 +72,36 @@ h3 {
   margin-bottom: 10px;
 }
 
-.sub-menu-container{
+.sub-menu-container {
   display: flex;
+}
+
+.logotype {
+  font-weight: 900;
+  font-style: italic;
+  font-size: 20pt;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.login-btn{
+  color: black;
+  margin-top: -5px;
+  
+}
+
+
+span{
+  margin: 5px;
+  cursor: pointer;
+}
+
+.down-arrow{
+  margin: -1px 0 0 6px;
+}
+
+
+.flex-row-center{
+  display: flex; 
+ justify-content: center;
 }
