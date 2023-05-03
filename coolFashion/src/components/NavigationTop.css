@@ -38,11 +38,10 @@ nav ul li:hover > a {
 /* Det här som får det att fungera */
 nav ul li:hover > ul {
   display: block;
-  height: fit-content;
 }
 
 nav ul ul {
-  background: #4fcaf68b;
+  background: #bebebe;
   text-align: center;
   display: none;
   width: 100%;
@@ -55,5 +54,5 @@ nav ul ul {
   float: none;
 }
 .column a:hover {
-  color: rgb(0, 0, 0);
+  color: black;
 }
