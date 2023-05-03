@@ -7,7 +7,7 @@
 .Landing-start {
     display: flex;
     align-items: center;
-    height: 1200px;
+    height: 1639px;
     width: 1200px;
     background-color: aquamarine;
     flex-direction: column;
@@ -60,3 +60,45 @@ gap: 23px;
 .skate{
     margin-top: 200px; 
 }
+
+.twopicone {
+    display: flex;
+    width: 800px;
+    height: 200px;
+    padding: 8px;
+    margin-top: 30px;
+    justify-content: space-between;
+    }
+
+.twopictwo {
+display: flex;
+width: 800px;
+height: 200px;
+padding: 8px;
+justify-content: space-between;
+}
+
+.bildotext {
+    background-image: url(../assets/placeholder.jpg);
+    width: 49%;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    
+}
+
+.specialtext {
+    margin-left: 12px;
+}
+
+.bannertwo{
+    display: flex;
+    background-image: url(../assets/placeholder.jpg);
+    width: 100%;
+    height: 250px;
+    margin-top: 30px;
+    justify-content: center;
+
+}
+
+
