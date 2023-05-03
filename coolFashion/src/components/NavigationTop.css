@@ -10,15 +10,13 @@ nav {
     background: #bebebe;
     list-style:none;
     padding:0 20px;
-    height: 60px;
+    height: auto;
   }
   
-  
-  nav ul li {
+    nav ul li {
     display: inline-block;
   }
-  
-  
+    
   nav ul li a {
     color:#333333;
     display:block;
@@ -26,16 +24,7 @@ nav {
     text-decoration:none;
     float: left;
     height: 60px;
-     line-height: 60px;
-  }
-  
-  nav ul li:hover {
-    /* background: #333333; */
-  }
-  
-  
-  nav ul li:hover > a{
-      color:#FFFFFF;
+    line-height: 60px;
   }
   
 
@@ -54,10 +43,21 @@ nav {
     left: 0px;
   }
   
-  .column a{
-float:none;
+.sub-menu{
+  padding-top: 10px;
+}
+
+.col-content{
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.column a {
+  float:none;
+  padding: 0;
+  margin: 0px;
 
   }
-  .column a:hover{
-    color: black;
-  }
+ 

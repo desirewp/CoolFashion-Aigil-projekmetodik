@@ -1,6 +1,6 @@
 import Footer from "../components/Footer";
 import NavigationTop from "../components/NavigationTop";
-import Landing from "../views/Landgpage";
+import Landing from "../views/Landpage";
 import "./Mall.css";
 
 function Mall() {
