@@ -9,7 +9,6 @@ function Mall() {
       <NavigationTop></NavigationTop>
       <div className="content-container">
         <Landing></Landing>
-        <p>Testar Roboto</p>
       </div>
       <Footer></Footer>
     </section>
