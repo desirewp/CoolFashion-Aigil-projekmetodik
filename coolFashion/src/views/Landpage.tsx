@@ -42,6 +42,28 @@ const Landing = () => {
         <div className="banner">
           <h2 className="skate">SKATE HÄR</h2>
         </div>
+
+        <div className="twopicone">
+          <div className="bildotext">
+            <h3>COOLA TISHOR</h3>
+          </div>
+          <div className="bildotext">
+            <h3>DISTRESSED DENIM</h3>
+          </div>
+      </div>
+      <div className="twopictwo">
+          <div className="bildotext">
+            <h3>TENNISSKOR</h3>
+          </div>
+          <div className="bildotext">
+            <h3>SKATE SHIRTS</h3>
+          </div>
+      </div>
+
+      <div className="bannertwo">
+          <h2 className="skate">FYNDA HÄR</h2>
+        </div>
+
       </div>
     </div>
   );
