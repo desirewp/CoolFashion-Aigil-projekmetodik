@@ -45,18 +45,18 @@ const Landing = () => {
 
         <div className="twopicone">
           <div className="bildotext">
-            <h3>COOLA TISHOR</h3>
+            <h3 className="specialtext">COOLA TISHOR</h3>
           </div>
           <div className="bildotext">
-            <h3>DISTRESSED DENIM</h3>
+            <h3 className="specialtext">DISTRESSED DENIM</h3>
           </div>
       </div>
       <div className="twopictwo">
           <div className="bildotext">
-            <h3>TENNISSKOR</h3>
+            <h3 className="specialtext">TENNISSKOR</h3>
           </div>
           <div className="bildotext">
-            <h3>SKATE SHIRTS</h3>
+            <h3 className="specialtext" >SKATE SHIRTS</h3>
           </div>
       </div>
 
