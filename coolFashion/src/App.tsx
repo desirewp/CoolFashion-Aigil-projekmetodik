@@ -4,8 +4,6 @@ import Mall from "./Mall/Mall";
 function App() {
   return (
     <>
-      {/* <Landing></Landing> */}
-
       <Mall></Mall>
     </>
   );
