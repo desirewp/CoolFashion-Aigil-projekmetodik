@@ -1,43 +1,47 @@
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../../firestore-config'
-import { useEffect, useState } from 'react';
-import { IContactMessage } from '../../Interfaces/Interfaces';
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../../firestore-config";
+import { useEffect, useState } from "react";
+import { IContactMessage } from "../../Interfaces/Interfaces";
 
-const Admin = () => { 
-const [contactMsg, setContactMsg] = useState<IContactMessage[]>([]);
+const Admin = () => {
+  const [contactMsg, setContactMsg] = useState<IContactMessage[]>([]);
 
-const dbRef = db;
-const contactMsgCollectionRef = collection(dbRef, 'contact')
+  const dbRef = db;
+  const contactMsgCollectionRef = collection(dbRef, "contact");
 
-    const getContactMsg = async () => {
-        const contactMessagesData = await getDocs(contactMsgCollectionRef)
-        setContactMsg(
-            contactMessagesData.docs.map((doc) => ({ 
-            ...(doc.data() as IContactMessage), 
-            id: doc.id,
-         })));
-        };
-    
+  const getContactMsg = async () => {
+    const contactMessagesData = await getDocs(contactMsgCollectionRef);
+    setContactMsg(
+      contactMessagesData.docs.map((doc) => ({
+        ...(doc.data() as IContactMessage),
+        id: doc.id,
+      }))
+    );
+  };
 
-        useEffect(() => { 
-            getContactMsg();
+  useEffect(() => {
+    getContactMsg();
+  }, []);
 
-            // Går att läsa
-            console.log(contactMsg);
-       
-                
-          }, []);
+  const messageListElement = contactMsg.map((msg) => {
+    return (
+      <>
+        <p key={msg.id}>{msg.message}</p>
+        <br />
+      </>
+    );
+  });
 
+  return (
+    <>
+      <h1>Jag är ADMIN</h1>
 
-    return(
-        <>
-        
-        <h1>Jag är ADMIN</h1>
+      <div>
+        <h2>Kontakt meddelanden</h2>
+        {messageListElement}
+      </div>
+    </>
+  );
+};
 
-
-        </>
-    )
- }
-
- export default Admin;
-
+export default Admin;
