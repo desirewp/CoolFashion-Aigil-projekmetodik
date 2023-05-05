@@ -1,10 +1,13 @@
+import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Mall from "./Mall/Mall";
 
 function App() {
   return (
     <>
-      <Mall></Mall>
+      <BrowserRouter>
+        <Mall></Mall>
+      </BrowserRouter>
     </>
   );
 }
