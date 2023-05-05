@@ -1,4 +1,5 @@
 import "./Landpage.css";
+import Slider from "../components/slider";
 import Bild from "../assets/placeholder.jpg";
 
 const Landing = () => {
@@ -10,7 +11,6 @@ const Landing = () => {
             <h3 className="freeship">Free Shipping & Returns</h3>
           </div>
         </div>
-
         <div className="bildrad">
           <div className="bildopris">
             <img className="bildoprisbild" src={Bild} alt="" />
@@ -32,11 +32,20 @@ const Landing = () => {
             <h5>produkt</h5>
             <h4>4000 kr</h4>
           </div>
+
           <div className="bildopris">
             <img className="bildoprisbild" src={Bild} alt="" />
             <h5>produkt</h5>
             <h4>5000 kr</h4>
           </div>
+        </div>
+
+        {/* 
+        Slider
+        Slider
+        Slider*/}
+        <div className="slider">
+          <Slider></Slider>
         </div>
 
         <div className="banner">
@@ -50,20 +59,19 @@ const Landing = () => {
           <div className="bildotext">
             <h3 className="specialtext">DISTRESSED DENIM</h3>
           </div>
-      </div>
-      <div className="twopictwo">
+        </div>
+        <div className="twopictwo">
           <div className="bildotext">
             <h3 className="specialtext">TENNISSKOR</h3>
           </div>
           <div className="bildotext">
-            <h3 className="specialtext" >SKATE SHIRTS</h3>
+            <h3 className="specialtext">SKATE SHIRTS</h3>
           </div>
-      </div>
-
-      <div className="bannertwo">
-          <h2 className="skate">FYNDA HÄR</h2>
         </div>
 
+        <div className="bannertwo">
+          <h2 className="skate">FYNDA HÄR</h2>
+        </div>
       </div>
     </div>
   );
