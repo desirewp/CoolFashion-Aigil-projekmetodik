@@ -1,3 +1,7 @@
+
+const dbAdress = db;
+
+
 const Admin = () => { 
     return(
         <>
