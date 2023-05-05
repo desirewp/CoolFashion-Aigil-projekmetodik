@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React from "react";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -20,40 +21,42 @@ const Contact = () => {
   return (
     <>
       <h1>Kontakta osssssss NU!</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Namn</label>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="email">E-post</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="message">Meddelande</label>
-          <textarea
-            id="message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            maxLength={500}
-            required
-          ></textarea>
-        </div>
-        <button type="submit">Skicka</button>
-        {status && <p>{status}</p>}
-      </form>
+      <div className="contact-container">
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="name">Namn</label>
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="email">E-post</label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="message">Meddelande</label>
+            <textarea
+              id="message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              maxLength={500}
+              required
+            ></textarea>
+          </div>
+          <button type="submit">Skicka</button>
+          {status && <p>{status}</p>}
+        </form>
+      </div>
     </>
   );
 };
