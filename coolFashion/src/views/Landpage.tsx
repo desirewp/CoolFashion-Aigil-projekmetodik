@@ -1,5 +1,5 @@
 import "./Landpage.css";
-import Slider from "../components/slider";
+import Slider from "../components/Slider";
 import Bild from "../assets/placeholder.jpg";
 
 const Landing = () => {
