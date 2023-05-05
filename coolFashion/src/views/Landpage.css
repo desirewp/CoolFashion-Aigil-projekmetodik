@@ -1,100 +1,109 @@
 .Container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Landing-start {
-    display: flex;
-    align-items: center;
-    height: 1639px;
-    width: 1200px;
-    background-color: aquamarine;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  height: 1639px;
+  width: 1200px;
+  background-color: aquamarine;
+  flex-direction: column;
 }
 
-.picholder{
-    display: flex;
-    width: 700px;
-    height: 400px;
-    padding: 30px;
+.picholder {
+  display: flex;
+  width: 700px;
+  height: 400px;
+  padding: 30px;
 }
 
 .pic {
-    display: flex;
-    background-image: url(../assets/placeholder.jpg);
-    width: 100%;
-    height: 100%;
-    
+  display: flex;
+  background-image: url(../assets/placeholder.jpg);
+  width: 100%;
+  height: 100%;
 }
 
 .freeship {
-margin-top: 290px;
-margin-left: 390px;
+  margin-top: 290px;
+  margin-left: 390px;
 }
 
 .bildrad {
-display: flex;
-gap: 23px;
-
+  display: flex;
+  gap: 23px;
 }
 
 .bildoprisbild {
-    width: 110px;
-    height: 200px;
+  width: 110px;
+  height: 200px;
 }
 
-.banner{
-    display: flex;
-    background-image: url(../assets/placeholder.jpg);
-    width: 100%;
-    height: 250px;
-    margin-top: 40px;
-    justify-content: center;
-    
+.banner {
+  display: flex;
+  background-image: url(../assets/placeholder.jpg);
+  width: 100%;
+  height: 250px;
+  margin-top: 40px;
+  justify-content: center;
 }
-.skate{
-    margin-top: 200px; 
+.skate {
+  margin-top: 200px;
 }
 
 .twopicone {
-    display: flex;
-    width: 800px;
-    height: 200px;
-    padding: 8px;
-    margin-top: 30px;
-    justify-content: space-between;
-    }
+  display: flex;
+  width: 800px;
+  height: 200px;
+  padding: 8px;
+  margin-top: 30px;
+  justify-content: space-between;
+}
 
 .twopictwo {
-display: flex;
-width: 800px;
-height: 200px;
-padding: 8px;
-justify-content: space-between;
+  display: flex;
+  width: 800px;
+  height: 200px;
+  padding: 8px;
+  justify-content: space-between;
 }
 
 .bildotext {
-    background-image: url(../assets/placeholder.jpg);
-    width: 49%;
-    height: 100%;
-    display: flex;
-    align-items: end;
-    
+  background-image: url(../assets/placeholder.jpg);
+  width: 49%;
+  height: 100%;
+  display: flex;
+  align-items: end;
 }
 
 .specialtext {
-    margin-left: 12px;
+  margin-left: 12px;
 }
 
-.bannertwo{
-    display: flex;
-    background-image: url(../assets/placeholder.jpg);
-    width: 100%;
-    height: 250px;
-    margin-top: 30px;
-    justify-content: center;
-
+.bannertwo {
+  display: flex;
+  background-image: url(../assets/placeholder.jpg);
+  width: 100%;
+  height: 250px;
+  margin-top: 30px;
+  justify-content: center;
 }
 
+.slider {
+  width: 100%;
+  margin-top: 40px;
+}
 
+.slider img {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.slider p {
+  text-align: center;
+  margin-top: 10px;
+}
