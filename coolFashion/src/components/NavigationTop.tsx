@@ -1,15 +1,20 @@
+import { Link } from "react-router-dom";
 import "./NavigationTop.css";
 
 const NavigationTop = () => {
   return (
     <>
       <nav>
-        <p className="logotype">CoolFashion</p>
+        <Link to="/start">
+          <p className="logotype">CoolFashion</p>
+        </Link>
         <ul className="link-list">
           <li>
-            <a href="#" className="active">
-              Start
-            </a>
+            <Link to="/start">
+              <a href="#" className="active">
+                Start
+              </a>
+            </Link>
           </li>
           <li>
             <a href="#">Populärt</a>
@@ -65,7 +70,9 @@ const NavigationTop = () => {
                   <a href="#">Väskor</a>
                   <a href="#">Klockor</a>
                   <a href="#">Smycken</a>
-                  <a href="#">Alla kategorier</a>
+                  <Link to="*">
+                    <a href="#">Alla kategorier</a>
+                  </Link>
                 </div>
               </li>
             </ul>
@@ -101,7 +108,9 @@ const NavigationTop = () => {
           </li>
 
           <li>
-            <a href="#">Kontakt</a>
+            <Link to="/contact">
+              <a href="#">Kontakta oss</a>
+            </Link>
           </li>
           <li>
             <a href="#">FAQ</a>
@@ -113,9 +122,11 @@ const NavigationTop = () => {
           <span className="material-symbols-outlined">shopping_cart</span>
           <span className="material-symbols-outlined">person</span>
         </div>
-        <a href="#" className="login-btn">
-          Logga in
-        </a>
+        <Link to="/admin">
+          <a href="#" className="login-btn">
+            Logga in
+          </a>
+        </Link>
       </nav>
     </>
   );
