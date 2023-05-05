@@ -1,5 +1,10 @@
+import { db } from '../../../firestore-config'
 
-const dbAdress = db;
+const dbRef = db;
+console.log(dbRef);
+
+
+
 
 
 const Admin = () => { 
@@ -7,6 +12,8 @@ const Admin = () => {
         <>
         
         <h1>Jag är ADMIN</h1>
+
+
         </>
     )
  }
