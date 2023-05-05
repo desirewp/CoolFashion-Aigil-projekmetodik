@@ -32,6 +32,7 @@ const Admin = () => {
     );
   });
 
+  //   Ostbågar är bra
   return (
     <>
       <h1>Jag är ADMIN</h1>
