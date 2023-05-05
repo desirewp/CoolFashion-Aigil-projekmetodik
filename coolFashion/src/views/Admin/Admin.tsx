@@ -21,8 +21,10 @@ const contactMsgCollectionRef = collection(dbRef, 'contact')
 
         useEffect(() => { 
             getContactMsg();
-            console.log(contactMsg[0]);
-         
+
+            // Går att läsa
+            console.log(contactMsg);
+       
                 
           }, []);
 
