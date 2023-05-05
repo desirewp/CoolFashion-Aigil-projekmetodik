@@ -19,8 +19,6 @@ const Admin = () => {
     );
   };
 
-//   Ostbågar är bra
-
   useEffect(() => {
     getContactMsg();
   }, []);
