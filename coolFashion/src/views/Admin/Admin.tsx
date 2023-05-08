@@ -7,6 +7,9 @@ import "./Admin.css";
 
 const Admin = () => {
   const [contactMsg, setContactMsg] = useState<IContactMessage[]>([]);
+  const [titleInput, setTitleInput] = useState("Produktnamn");
+  const [descriptionInput, setDescriptionInput] = useState("Beskriv produkten här");
+  const [selectedFile, setSelectedFile] = useState<File | undefined>();
 
   const dbRef = db;
   const contactMsgCollectionRef = collection(dbRef, "contact");
@@ -25,20 +28,16 @@ const Admin = () => {
     getContactMsg();
   }, []);
 
+  //---------------- Event handelers-----------------
+  const fileSelectedHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file: File | undefined = event.target.files? event.target.files[0] : undefined;
+    setSelectedFile(file || undefined);
+  };
 
-//---------------- Event handelers-----------------
- const fileSelectedHandler = (event: React.ChangeEvent<HTMLInputElement>) => { 
-  console.log(event.target)
-  }
-
-
-//  --------------- HTML Elements -----------------
+  //  --------------- HTML Elements -----------------
   const messageListElement = contactMsg.map((msg) => {
-    return (
-        <p key={msg.id}>{msg.message}</p>      
-    );
+    return <p key={msg.id}>{msg.message}</p>;
   });
-
 
   return (
     <>
@@ -61,26 +60,33 @@ const Admin = () => {
               <input
                 type="text"
                 id="title"
-                placeholder="Produktnamn"
+                placeholder={titleInput}
+                // value={titleInput}
+                onChange={(e) => setTitleInput(e.target.value)}
                 required
               />
             </div>
             <div>
               <label htmlFor="images">Bilder</label>
-              <input type="file" 
-              id="images" 
-              placeholder="Bilder" 
-              accept="image/x-png, image/jpeg" 
-              required  
-              onChange={fileSelectedHandler}/>
+              {/* Man kan bara välja en fil i taget */}
+
+              <input
+                type="file"
+                id="images"
+                placeholder="Bilder"
+                accept="image/x-png, image/jpeg"
+                required
+                onChange={fileSelectedHandler}
+              />
             </div>
 
             <div>
               <label htmlFor="description">Beskrivning</label>
               <textarea
                 id="description"
-                value="Fyll i beskrivningen här"
+                placeholder={descriptionInput}
                 maxLength={500}
+                onChange={(e) => setDescriptionInput(e.target.value)}
                 required
               ></textarea>
             </div>
