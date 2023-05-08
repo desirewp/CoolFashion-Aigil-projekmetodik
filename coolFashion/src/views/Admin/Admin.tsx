@@ -88,6 +88,8 @@ const Admin = () => {
               <button type="button" onClick={uploadImage}>Spara</button>
             </div>
             {/* <div>
+
+            https://www.youtube.com/watch?v=YOAeBSCkArA
               <label htmlFor="title">Produktnamn</label>
               <input
                 type="text"
