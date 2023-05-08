@@ -56,6 +56,19 @@ const Admin = () => {
           <hr />
           <form>
             <div>
+              <label htmlFor="images">Bilder</label>
+              {/* Man kan bara välja en fil i taget */}
+              <input
+                type="file"
+                id="images"
+                placeholder="Bilder"
+                accept="image/x-png, image/jpeg"
+                required
+                onChange={fileSelectedHandler}
+                />
+              <button type="submit">Spara</button>
+            </div>
+            {/* <div>
               <label htmlFor="title">Produktnamn</label>
               <input
                 type="text"
@@ -65,21 +78,8 @@ const Admin = () => {
                 onChange={(e) => setTitleInput(e.target.value)}
                 required
               />
-            </div>
-            <div>
-              <label htmlFor="images">Bilder</label>
-              {/* Man kan bara välja en fil i taget */}
-
-              <input
-                type="file"
-                id="images"
-                placeholder="Bilder"
-                accept="image/x-png, image/jpeg"
-                required
-                onChange={fileSelectedHandler}
-              />
-            </div>
-
+            </div> */}
+{/* 
             <div>
               <label htmlFor="description">Beskrivning</label>
               <textarea
@@ -89,9 +89,9 @@ const Admin = () => {
                 onChange={(e) => setDescriptionInput(e.target.value)}
                 required
               ></textarea>
-            </div>
+            </div> */}
 
-            <div>
+            {/* <div>
               <label htmlFor="category">Kategori</label>
               <select name="category" id="category">
                 <option value="" disabled>
@@ -118,9 +118,8 @@ const Admin = () => {
                 <option value="Bikinis">Bikinis</option>
                 <option value="Badbyxor">Badbyxor</option>
               </select>
-            </div>
+            </div> */}
 
-            <button type="submit">Spara</button>
           </form>
         </div>
       </div>
