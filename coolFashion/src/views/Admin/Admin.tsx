@@ -31,14 +31,9 @@ const Admin = () => {
       </>
     );
   });
-<<<<<<< HEAD
-  return (
-    <>
-      <h1>Jag är ADMIN</h1>
-=======
 
   //   Ostbågar är bra
-  
+
   return (
     <>
       <h1>Jag är ADMIN</h1>
@@ -47,7 +42,6 @@ const Admin = () => {
         <h2>Kontakt meddelanden</h2>
         {messageListElement}
       </div>
->>>>>>> bcd06d00a2dbc5a7762e08a0448d95d852948167
     </>
   );
 };
