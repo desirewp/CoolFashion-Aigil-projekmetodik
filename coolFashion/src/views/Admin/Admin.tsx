@@ -1,15 +1,21 @@
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../../firestore-config";
 import { useEffect, useState } from "react";
-import { IContactMessage } from "../../Interfaces/Interfaces";
+import { db } from "../../../firestore-config";
+import { collection, getDocs } from "firebase/firestore";
+import { storage } from '../../../firestore-config';
+import { ref, uploadBytes } from 'firebase/storage';
+import { v4 } from 'uuid';
 
+import { IContactMessage } from "../../Interfaces/Interfaces";
 import "./Admin.css";
 
 const Admin = () => {
   const [contactMsg, setContactMsg] = useState<IContactMessage[]>([]);
   const [titleInput, setTitleInput] = useState("Produktnamn");
-  const [descriptionInput, setDescriptionInput] = useState("Beskriv produkten här");
+  const [descriptionInput, setDescriptionInput] = useState(
+    "Beskriv produkten här"
+  );
   const [selectedFile, setSelectedFile] = useState<File | undefined>();
+  // const [ imageupload,setImageupload] = useState(null)
 
   const dbRef = db;
   const contactMsgCollectionRef = collection(dbRef, "contact");
@@ -30,7 +36,9 @@ const Admin = () => {
 
   //---------------- Event handelers-----------------
   const fileSelectedHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file: File | undefined = event.target.files? event.target.files[0] : undefined;
+    const file: File | undefined = event.target.files
+      ? event.target.files[0]
+      : undefined;
     setSelectedFile(file || undefined);
   };
 
@@ -39,6 +47,16 @@ const Admin = () => {
     return <p key={msg.id}>{msg.message}</p>;
   });
 
+  const uploadImage = () => {
+    if (selectedFile == undefined) {
+      // alert("Du måste ladda upp nåt!");
+      return;
+    }
+    const imageRef = ref(storage, `products/${selectedFile.name + v4() }`)
+    uploadBytes(imageRef, selectedFile).then(() => { 
+      alert('Bild uppladdad! 🥓');
+     })
+  };
   return (
     <>
       <h1>Jag är ADMIN</h1>
@@ -62,11 +80,12 @@ const Admin = () => {
                 type="file"
                 id="images"
                 placeholder="Bilder"
-                accept="image/x-png, image/jpeg"
+                // accept="image/x-png, image/jpeg"
                 required
                 onChange={fileSelectedHandler}
-                />
-              <button type="submit">Spara</button>
+                // onChange={ (event) => { setImageupload(event.target.files[0]) } }
+              />
+              <button type="button" onClick={uploadImage}>Spara</button>
             </div>
             {/* <div>
               <label htmlFor="title">Produktnamn</label>
@@ -79,7 +98,7 @@ const Admin = () => {
                 required
               />
             </div> */}
-{/* 
+            {/* 
             <div>
               <label htmlFor="description">Beskrivning</label>
               <textarea
@@ -119,7 +138,6 @@ const Admin = () => {
                 <option value="Badbyxor">Badbyxor</option>
               </select>
             </div> */}
-
           </form>
         </div>
       </div>
