@@ -1,60 +1,57 @@
 import { useState } from "react";
 import "./Contact.css";
+import { addDoc, collection } from "@firebase/firestore";
+import { db } from "../../../firestore-config";
 
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [status, setStatus] = useState("");
 
-  const handleSubmit = async (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    const res = await fetch("PLACEHOLDER", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, message }),
-    });
-    const json = await res.json();
-    setStatus(json.message);
-  };
+  const [name, setName] = useState("");
+  const [mail, setMail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const contactCollectionRef = collection(db, "contact");
+
+  const addNewMessage = async (e: React.FormEvent<HTMLFormElement>) => {
+    e?.preventDefault();
+    await addDoc(contactCollectionRef, { name: name, mail: mail, message: message });
+    setName("");
+    setMail("");
+    setMessage("");
+  }
 
   return (
     <>
       <h1>Skriv din fråga nedan i formuläret</h1>
       <div className="contact-container">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={(e) => addNewMessage(e)}>
           <div>
             <label htmlFor="name">Namn</label>
             <input
               type="text"
-              id="name"
+              required
               value={name}
               onChange={(e) => setName(e.target.value)}
-              required
             />
           </div>
           <div>
-            <label htmlFor="email">E-post</label>
+            <label htmlFor="mail">E-post</label>
             <input
               type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={mail}
+              onChange={(e) => setMail(e.target.value)}
               required
             />
           </div>
           <div>
             <label htmlFor="message">Meddelande</label>
             <textarea
-              id="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               maxLength={500}
               required
-            ></textarea>
+            />
           </div>
           <button type="submit">Skicka</button>
-          {status && <p>{status}</p>}
         </form>
       </div>
     </>
