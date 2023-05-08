@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Contact.css";
 
 const Contact = () => {
@@ -20,7 +20,7 @@ const Contact = () => {
 
   return (
     <>
-      <h1>Kontakta osssssss NU!</h1>
+      <h1>Skriv din fråga nedan i formuläret</h1>
       <div className="contact-container">
         <form onSubmit={handleSubmit}>
           <div>
