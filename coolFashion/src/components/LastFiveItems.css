@@ -1,0 +1,19 @@
+.container1 {
+    display: flex;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    height: 250px;
+    width: 160px;
+}
+
+.bild {
+height: 100%;
+width: 93%;
+
+}
+
