@@ -1,6 +1,7 @@
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firestore-config";
 import { useEffect, useState } from "react";
+import { IContactMessage } from "../../Interfaces/Interfaces";
 
 const Admin = () => {
   const [contactMsg, setContactMsg] = useState<IContactMessage[]>([]);
@@ -30,9 +31,23 @@ const Admin = () => {
       </>
     );
   });
+<<<<<<< HEAD
   return (
     <>
       <h1>Jag är ADMIN</h1>
+=======
+
+  //   Ostbågar är bra
+  
+  return (
+    <>
+      <h1>Jag är ADMIN</h1>
+
+      <div>
+        <h2>Kontakt meddelanden</h2>
+        {messageListElement}
+      </div>
+>>>>>>> bcd06d00a2dbc5a7762e08a0448d95d852948167
     </>
   );
 };

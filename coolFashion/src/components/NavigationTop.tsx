@@ -10,10 +10,8 @@ const NavigationTop = () => {
         </Link>
         <ul className="link-list">
           <li>
-            <Link to="/start">
-              <a href="#" className="active">
-                Start
-              </a>
+            <Link to="/start" className="active">
+              Start
             </Link>
           </li>
           <li>
@@ -70,9 +68,7 @@ const NavigationTop = () => {
                   <a href="#">Väskor</a>
                   <a href="#">Klockor</a>
                   <a href="#">Smycken</a>
-                  <Link to="*">
-                    <a href="#">Alla kategorier</a>
-                  </Link>
+                  <Link to="*">Alla kategorier</Link>
                 </div>
               </li>
             </ul>
@@ -108,9 +104,7 @@ const NavigationTop = () => {
           </li>
 
           <li>
-            <Link to="/contact">
-              <a href="#">Kontakta oss</a>
-            </Link>
+            <Link to="/contact">Kontakta oss</Link>
           </li>
           <li>
             <a href="#">FAQ</a>
@@ -122,10 +116,8 @@ const NavigationTop = () => {
           <span className="material-symbols-outlined">shopping_cart</span>
           <span className="material-symbols-outlined">person</span>
         </div>
-        <Link to="/admin">
-          <a href="#" className="login-btn">
-            Logga in
-          </a>
+        <Link to="/admin" className="login-btn">
+          Logga in
         </Link>
       </nav>
     </>
