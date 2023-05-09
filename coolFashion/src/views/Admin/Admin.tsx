@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { db } from "../../../firestore-config";
-import { collection, getDocs } from "firebase/firestore";
-import { storage } from '../../../firestore-config';
-import { ref, uploadBytes } from 'firebase/storage';
-import { v4 } from 'uuid';
+import { addDoc, collection, getDocs } from "firebase/firestore";
+import { storage } from "../../../firestore-config";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { v4 } from "uuid";
 
 import { IContactMessage } from "../../Interfaces/Interfaces";
 import "./Admin.css";
@@ -14,12 +14,15 @@ const Admin = () => {
   const [descriptionInput, setDescriptionInput] = useState(
     "Beskriv produkten här"
   );
+  const [categoryInput, setCategoryInput] = useState("");
   const [selectedFile, setSelectedFile] = useState<File | undefined>();
-  // const [ imageupload,setImageupload] = useState(null)
 
+  // ----------------Databas ---------------------------
   const dbRef = db;
   const contactMsgCollectionRef = collection(dbRef, "contact");
+  const productCollectionRef = collection(dbRef, "products");
 
+  // Hämtar
   const getContactMsg = async () => {
     const contactMessagesData = await getDocs(contactMsgCollectionRef);
     setContactMsg(
@@ -30,9 +33,34 @@ const Admin = () => {
     );
   };
 
+  // Skickar upp data från formuläret
+  const addNewProduct = async (url: string) => {
+    await addDoc(productCollectionRef, {
+      title: titleInput,
+      imageUrl: url,
+      description: descriptionInput,
+      category: categoryInput,
+    });
+  };
+
   useEffect(() => {
     getContactMsg();
   }, []);
+
+  const uploadImage = () => {
+    if (selectedFile == undefined) {
+      alert("Välj en bild på produkten att ladda upp");
+      return;
+    }
+    const imageRef = ref(storage, `products/${selectedFile.name + v4()}`);
+    uploadBytes(imageRef, selectedFile).then(() => {
+      alert("Bild uppladdad! 🥓");
+      getDownloadURL(imageRef).then((url) => {
+        // Lägg till produkten i databasen
+        addNewProduct(url);
+      });
+    });
+  };
 
   //---------------- Event handelers-----------------
   const fileSelectedHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -47,16 +75,6 @@ const Admin = () => {
     return <p key={msg.id}>{msg.message}</p>;
   });
 
-  const uploadImage = () => {
-    if (selectedFile == undefined) {
-      // alert("Du måste ladda upp nåt!");
-      return;
-    }
-    const imageRef = ref(storage, `products/${selectedFile.name + v4() }`)
-    uploadBytes(imageRef, selectedFile).then(() => { 
-      alert('Bild uppladdad! 🥓');
-     })
-  };
   return (
     <>
       <h1>Jag är ADMIN</h1>
@@ -74,33 +92,27 @@ const Admin = () => {
           <hr />
           <form>
             <div>
-              <label htmlFor="images">Bilder</label>
-              {/* Man kan bara välja en fil i taget */}
-              <input
-                type="file"
-                id="images"
-                placeholder="Bilder"
-                // accept="image/x-png, image/jpeg"
-                required
-                onChange={fileSelectedHandler}
-                // onChange={ (event) => { setImageupload(event.target.files[0]) } }
-              />
-              <button type="button" onClick={uploadImage}>Spara</button>
-            </div>
-            {/* <div>
-
-            https://www.youtube.com/watch?v=YOAeBSCkArA
               <label htmlFor="title">Produktnamn</label>
               <input
                 type="text"
                 id="title"
                 placeholder={titleInput}
-                // value={titleInput}
                 onChange={(e) => setTitleInput(e.target.value)}
                 required
               />
-            </div> */}
-            {/* 
+            </div>
+            <div>
+              <label htmlFor="images">Bilder</label>
+              {/* Begränsning Man kan bara välja en fil i taget */}
+              <input
+                type="file"
+                id="images"
+                placeholder="Bilder"
+                required
+                onChange={fileSelectedHandler}
+              />
+            </div>
+
             <div>
               <label htmlFor="description">Beskrivning</label>
               <textarea
@@ -110,11 +122,17 @@ const Admin = () => {
                 onChange={(e) => setDescriptionInput(e.target.value)}
                 required
               ></textarea>
-            </div> */}
+            </div>
 
-            {/* <div>
+            <div>
               <label htmlFor="category">Kategori</label>
-              <select name="category" id="category">
+              <select
+                name="category"
+                id="category"
+                onChange={(e) => {
+                  setCategoryInput(e.target.value);
+                }}
+              >
                 <option value="" disabled>
                   Kategori
                 </option>
@@ -139,7 +157,10 @@ const Admin = () => {
                 <option value="Bikinis">Bikinis</option>
                 <option value="Badbyxor">Badbyxor</option>
               </select>
-            </div> */}
+            </div>
+            <button type="button" onClick={uploadImage}>
+              Spara
+            </button>
           </form>
         </div>
       </div>
