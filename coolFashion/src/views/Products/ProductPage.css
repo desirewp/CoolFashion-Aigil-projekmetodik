@@ -4,7 +4,6 @@
   justify-content: center;
   flex-wrap: wrap;  
   height: auto;
-
 }
 .product-card {
     padding: 10px;
@@ -19,7 +18,7 @@ img {
     height: 250px;
     object-fit: cover;
 }
-
+/* Fade in */
 @keyframes appear {
     from {opacity: 0}
     to {opacity: 1}
