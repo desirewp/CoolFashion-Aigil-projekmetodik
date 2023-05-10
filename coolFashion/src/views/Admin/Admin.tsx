@@ -27,6 +27,7 @@ const Admin = () => {
     const contactMessagesData = await getDocs(contactMsgCollectionRef);
     setContactMsg(
       contactMessagesData.docs.map((doc) => ({
+        
         ...(doc.data() as IContactMessage),
         id: doc.id,
       }))
