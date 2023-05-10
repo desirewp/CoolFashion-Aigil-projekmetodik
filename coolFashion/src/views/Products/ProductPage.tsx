@@ -10,7 +10,7 @@ const ProductPage = () => {
     const productCollectionRef = collection(dbRef, "products");
     const [products, setProducts] = useState<IProduct[]>([])
     
-  // Get
+  // Hämta produkter
   const getProducts = async () => {
     const productData = await getDocs(productCollectionRef, );
     setProducts(productData.docs.map((doc) => ({
@@ -25,13 +25,12 @@ const ProductPage = () => {
   }, []);
 
   return (
-    <div className="product-field">{products.map((item) => 
+  <div className="product-field">{products.map((item) => 
     <div className="product-card"> 
         <img className="product-img" src={item.imageUrl}></img>
         <p className="product-title">{item.title}</p>
-    </div>
-    
-)}</div>
+    </div>)}
+  </div>
 )}
 
 export default ProductPage;
