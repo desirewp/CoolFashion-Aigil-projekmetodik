@@ -9,7 +9,7 @@ const ProductPage = () => {
     const dbRef = db;
     const productCollectionRef = collection(dbRef, "products");
     const [products, setProducts] = useState<IProduct[]>([])
-
+    
   // Get
   const getProducts = async () => {
     const productData = await getDocs(productCollectionRef, );
@@ -24,12 +24,8 @@ const ProductPage = () => {
     getProducts();
   }, []);
 
-
-  
-
   return (
     <div className="product-field">{products.map((item) => 
-    
     <div className="product-card"> 
         <img className="product-img" src={item.imageUrl}></img>
         <p className="product-title">{item.title}</p>
