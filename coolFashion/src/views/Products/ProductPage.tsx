@@ -6,8 +6,7 @@ import { IProduct } from "../../Interfaces/Interfaces";
 
 
 const ProductPage = () => {
-    const dbRef = db;
-    const productCollectionRef = collection(dbRef, "products");
+    const productCollectionRef = collection(db, "products");
     const [products, setProducts] = useState<IProduct[]>([])
     
   // Hämta produkter
