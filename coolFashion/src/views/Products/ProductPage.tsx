@@ -12,7 +12,7 @@ const ProductPage = () => {
     
   // Hämta produkter
   const getProducts = async () => {
-    const productData = await getDocs(productCollectionRef, );
+    const productData = await getDocs(productCollectionRef);
     setProducts(productData.docs.map((doc) => ({
         ...(doc.data() as IProduct),
         id: doc.id,
