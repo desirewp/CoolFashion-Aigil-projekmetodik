@@ -7,6 +7,7 @@ import Admin from "../views/Admin/Admin";
 import Contact from "../views/Contact/Contact";
 import Error404 from "../views/Error404/Error404";
 import ProductPage from "../views/Products/ProductPage"
+import SingleProduct from "../views/Products/SingleProduct";
 
 function Mall() {
   return (
@@ -19,6 +20,7 @@ function Mall() {
         <Route path='/products' element={<ProductPage/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/admin' element={<Admin/>}/>
+        <Route path='/products/:productTitle' element={<SingleProduct/>}/>
         <Route path='*' element={<Error404/>}/>
       </Routes>
 
