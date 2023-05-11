@@ -6,6 +6,7 @@ import "./Mall.css";
 import Admin from "../views/Admin/Admin";
 import Contact from "../views/Contact/Contact";
 import Error404 from "../views/Error404/Error404";
+import ProductPage from "../views/Products/ProductPage"
 
 function Mall() {
   return (
@@ -15,6 +16,7 @@ function Mall() {
       <Routes>
         <Route path='/' element={<Landing/>}/>
         <Route path='/start' element={<Landing/>}/>
+        <Route path='/products' element={<ProductPage/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/admin' element={<Admin/>}/>
         <Route path='*' element={<Error404/>}/>

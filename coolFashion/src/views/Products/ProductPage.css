@@ -1,0 +1,25 @@
+
+.product-field {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;  
+  height: auto;
+}
+.product-card {
+    padding: 10px;
+    cursor: pointer;
+    animation: appear 2s ease-out;
+}
+.product-card:hover {
+    opacity: 0.8;
+}
+.product-card img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+}
+/* Fade in */
+@keyframes appear {
+    from {opacity: 0}
+    to {opacity: 1}
+}

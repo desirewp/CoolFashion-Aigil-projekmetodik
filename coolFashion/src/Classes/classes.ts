@@ -1,7 +1,8 @@
 export class Product {
-constructor( public title: string, public description: string, public category: string){
-    this.title = title;
-    this.description = description;
+constructor( public category: string, public description: string, public imageUrl: string, public title: string){
     this.category = category;
+    this.description = description;
+    this.imageUrl = imageUrl;
+    this.title = title;
 }
 }

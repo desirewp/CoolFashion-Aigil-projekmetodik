@@ -18,7 +18,7 @@ const LastFiveItems: React.FC<Props> = ({ list }) => {
     <div className='container1'>
       {lastFiveItems.map(item => (
         <div className='container2' key={item.id}>
-          <img className='bild' src={item.picture} alt={item.name} />
+          <img className='bild click' src={item.picture} alt={item.name}/>
           <p className='text' > {item.name}</p>
         </div>
       ))}

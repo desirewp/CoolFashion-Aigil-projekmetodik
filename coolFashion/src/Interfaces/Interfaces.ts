@@ -4,3 +4,10 @@ export interface IContactMessage{
     message : string;
     name : string;
 }
+
+export interface IProduct{
+    category: string;
+    description: string;
+    imageUrl : string;
+    title : string;
+}
