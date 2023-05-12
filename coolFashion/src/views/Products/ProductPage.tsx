@@ -32,6 +32,9 @@ const ProductPage = () => {
             <img className="product-img" src={product.imageUrl}></img>
           </Link>
           <p className="product-title">{product.title}</p>
+
+
+          {/* <komponent product={productFromDB}> */}
         </div>
       ))}
     </div>

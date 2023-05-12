@@ -22,11 +22,11 @@ const Contact = () => {
   
     // const objToString = JSON.stringify(shoppingCart);
   
-    const addToCart = () => {
-      const updatedShoppingCart = [...shoppingCart, new Product("Byxor", "Fula byxor", "https://firebasestorage.googleapis.com/v0/b/coolfashion-9fd35.appspot.com/o/products%2Fkids-fluffy-rainbow-unicorn-novelty-slippers-size-9-3-multi-coloured_KSCHSLIUNIS_01_1024x1024.pngb6f06f9e-b2b3-4cfc-b82c-f50f61427702?alt=media&token=b70d73dd-e83d-463c-82be-630f5c0ba42d", "Byxa2")] 
-      const uSCToString = JSON.stringify(updatedShoppingCart)
-      localStorage.setItem("cart", uSCToString)
-    }
+    // const addToCart = () => {
+    //   const updatedShoppingCart = [...shoppingCart, new Product("Byxor", "Fula byxor", "https://firebasestorage.googleapis.com/v0/b/coolfashion-9fd35.appspot.com/o/products%2Fkids-fluffy-rainbow-unicorn-novelty-slippers-size-9-3-multi-coloured_KSCHSLIUNIS_01_1024x1024.pngb6f06f9e-b2b3-4cfc-b82c-f50f61427702?alt=media&token=b70d73dd-e83d-463c-82be-630f5c0ba42d", "Byxa2")] 
+    //   const uSCToString = JSON.stringify(updatedShoppingCart)
+    //   localStorage.setItem("cart", uSCToString)
+    // }
   
     
 
@@ -47,7 +47,7 @@ const Contact = () => {
 
   return (
     <>      
-      <button onClick={addToCart}>Lägg i varukorg</button>
+      {/* <button onClick={addToCart}>Lägg i varukorg</button> */}
       <h1>Skriv din fråga nedan i formuläret</h1>
       <div className="contact-container">
         <form onSubmit={(e) => addNewMessage(e)}>
