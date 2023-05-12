@@ -11,14 +11,14 @@ const Contact = () => {
   const [message, setMessage] = useState("");
 
 
-  const shoppingCart = [
-    new Product ("Tröjor", 
-                  "Jättefin tröja, värmer gott", 
-                  "https://firebasestorage.googleapis.com/v0/b/coolfashion-9fd35.appspot.com/o/products%2Fkids-fluffy-rainbow-unicorn-novelty-slippers-size-9-3-multi-coloured_KSCHSLIUNIS_01_1024x1024.pngb6f06f9e-b2b3-4cfc-b82c-f50f61427702?alt=media&token=b70d73dd-e83d-463c-82be-630f5c0ba42d", 
-                  "Världens bästa tröja")
+  // const shoppingCart = [
+  //   new Product ("Tröjor", 
+  //                 "Jättefin tröja, värmer gott", 
+  //                 "https://firebasestorage.googleapis.com/v0/b/coolfashion-9fd35.appspot.com/o/products%2Fkids-fluffy-rainbow-unicorn-novelty-slippers-size-9-3-multi-coloured_KSCHSLIUNIS_01_1024x1024.pngb6f06f9e-b2b3-4cfc-b82c-f50f61427702?alt=media&token=b70d73dd-e83d-463c-82be-630f5c0ba42d", 
+  //                 "Världens bästa tröja")
   
 
-  ]
+  // ]
   
     // const objToString = JSON.stringify(shoppingCart);
   
