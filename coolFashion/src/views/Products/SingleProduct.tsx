@@ -56,7 +56,7 @@ const SingleProduct = () => {
   const handleAddToCart = () => {
     // const uSCToString = 
     // Problem: Få datan att vilja bo i cart
-    setCart([...cart, product]);
+    // setCart([...cart, product]);
   };
 
   return (
