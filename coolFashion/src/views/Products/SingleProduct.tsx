@@ -6,8 +6,10 @@ import { Link, useParams } from "react-router-dom";
 import { title } from "process";
 import "./SingleProduct.css";
 import { ProductDB } from "../../Classes/classes";
+import Share from "../../components/Share"
 
 const cartFromlocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
+
 
 const SingleProduct = () => {
   const productCollectionRef = collection(db, "products");
@@ -74,6 +76,9 @@ const SingleProduct = () => {
         <h2>{product?.title}</h2>
         <p>{product?.description}</p>
         <button onClick={handleAddToCart}>Lägg till i varukorgen</button>
+        <div>
+        <Share description={"Riktigt fett plagg!"}/>
+        </div>
       </div>
     </div>
   );
