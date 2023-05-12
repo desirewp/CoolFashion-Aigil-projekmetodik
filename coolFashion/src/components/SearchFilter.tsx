@@ -21,7 +21,6 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ products }) => {
     setFilteredData(filtered);
   };
 
-  // Display all products if no search query is entered
   const displayData = searchQuery === '' ? products : filteredData;
 
   return (
