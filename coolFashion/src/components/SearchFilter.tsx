@@ -9,7 +9,7 @@ interface SearchFilterProps {
 
 const SearchFilter: React.FC<SearchFilterProps> = ({ products }) => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [filteredData, setFilteredData] = useState<IProduct[]>([]); // Set initial state to an empty array
+  const [filteredData, setFilteredData] = useState<IProduct[]>([]); 
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const query = event.target.value;
