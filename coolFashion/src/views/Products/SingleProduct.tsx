@@ -5,6 +5,7 @@ import { IProduct } from "../../Interfaces/Interfaces";
 import { Link, useParams } from 'react-router-dom'
 import { title } from "process";
 import "./SingleProduct.css";
+import Share from "../../components/Share"
 
 const SingleProduct = () => {
     const productCollectionRef = collection(db, "products");
@@ -34,6 +35,7 @@ const SingleProduct = () => {
         <div className='product'>
             <img className="prodbild" src={product?.imageUrl} alt={product?.title} />
             <h2>{product?.title}</h2>
+            <Share description={"Riktigt fett plagg!"}/>
             <Link to='/products'>Tillbaka till produkter</Link>
         </div>
     </div>

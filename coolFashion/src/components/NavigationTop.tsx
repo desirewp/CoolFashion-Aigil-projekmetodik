@@ -18,6 +18,9 @@ const NavigationTop = () => {
             <a href="#">Populärt</a>
           </li>
           <li>
+            <Link to="/products">Produkter</Link>
+          </li>
+          <li>
             <div className="flex-row-center">
               <a href="#">Kläder</a>
               <span className="material-symbols-outlined down-arrow">
