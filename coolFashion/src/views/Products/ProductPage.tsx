@@ -4,6 +4,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firestore-config";
 import { IProduct } from "../../Interfaces/Interfaces";
 import { Link } from "react-router-dom";
+import SearchFilter from '../../components/SearchFilter';
 
 const ProductPage = () => {
   const productCollectionRef = collection(db, "products");
@@ -25,19 +26,14 @@ const ProductPage = () => {
   }, []);
 
   return (
-    <div className="product-field">
-      {products.map((product) => (
-        <div key={product.title} className="product-card">
-          <Link to={`/products/${product.title}`}>
-            <img className="product-img" src={product.imageUrl}></img>
-          </Link>
-          <p className="product-title">{product.title}</p>
 
-
-          {/* <komponent product={productFromDB}> */}
-        </div>
-      ))}
+    <>
+    <div>
+      <h1>SÖK PRODUKT</h1>
+      <SearchFilter products={products} />
     </div>
+    
+      </>
   );
 };
 
