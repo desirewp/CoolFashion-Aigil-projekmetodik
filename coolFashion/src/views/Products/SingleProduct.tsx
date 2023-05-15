@@ -6,6 +6,7 @@ import { Link, useParams } from "react-router-dom";
 import "./SingleProduct.css";
 import { ProductDB } from "../../Classes/classes";
 import Share from "../../components/Share";
+import Wishlist from "../Wishlist/Wishlist";
 
 const SingleProduct = () => {
   const [products, setProducts] = useState<ProductDB[]>([]);
@@ -29,12 +30,11 @@ const SingleProduct = () => {
   const serchResultProduct = products.filter(
     (product) => product.title === productTitle
   );
-  const product = serchResultProduct[0];
+  const product: ProductDB = serchResultProduct[0];
 
   useEffect(() => {
     getProducts();
   }, []);
-
 
   const addToCart = () => {
     // Vi baserar den uppdaterade korgen på shopingCart (alltid tom)
@@ -52,6 +52,33 @@ const SingleProduct = () => {
     localStorage.setItem("cartItems", stringAddToCart);
   };
 
+  let updatedWishlist = [];
+  let wishlist: ProductDB[] = [];
+
+  const addToWishlist = (productid: string) => {
+    updatedWishlist = [...wishlist, product];
+    // Vi hämtar innehåll från cartItems
+    let exixtingWish = localStorage.getItem("wishItems");
+
+    // Vi konverterar cartitems (det som lagrats) till en {}[]
+    let objectArrExistingWish: ProductDB[] = JSON.parse(exixtingWish || "[]");
+
+    //blockerar dubbletter
+    let exist = objectArrExistingWish.some((product) => {
+      return product.id === productid;
+    });
+
+    if (exist === true) {
+      alert("Produkten redan tillagd!");
+    } else {
+      // Vi slår ihop existerande + nya till en cart
+      let addToWishlist = [...objectArrExistingWish, ...updatedWishlist];
+      // Vi konverterar nya korgen till string
+      let stringAddToWishlist = JSON.stringify(addToWishlist);
+      // Vi pushar upp resultatet till local storage
+      localStorage.setItem("wishItems", stringAddToWishlist);
+    }
+  };
 
   return (
     <div className="container">
@@ -67,8 +94,18 @@ const SingleProduct = () => {
         />
         <h2>{product?.title}</h2>
         <p>{product?.description}</p>
-        <button onClick={addToCart} className="single-btn">Lägg till i varukorgen</button>
-     
+        <button onClick={addToCart} className="single-btn">
+          Lägg till i varukorgen
+        </button>
+        <button
+          onClick={() => {
+            addToWishlist(product.id);
+          }}
+          className="single-btn"
+        >
+          Lägg till i önskelistan
+        </button>
+
         <div>
           <Share description={"Riktigt fett plagg!"} />
         </div>
