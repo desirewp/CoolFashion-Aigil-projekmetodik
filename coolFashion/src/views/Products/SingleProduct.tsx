@@ -9,7 +9,6 @@ import Share from "../../components/Share";
 
 const SingleProduct = () => {
   const [products, setProducts] = useState<ProductDB[]>([]);
-  const [cart, setCart] = useState<ProductDB[]>([]);
   let shoppingCart: ProductDB[] = [];
   let updatedCart: ProductDB[] = [];
 
@@ -53,6 +52,8 @@ const SingleProduct = () => {
     localStorage.setItem("cartItems", stringAddToCart);
   };
 
+
+  // Flytta till vår varukorgSida
   const removeFromCart = () => {
     // Vi hämtar innehåll från cartItems
     let exixtingCart = localStorage.getItem("cartItems");
