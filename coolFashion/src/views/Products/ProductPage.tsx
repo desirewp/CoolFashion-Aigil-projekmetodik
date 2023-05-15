@@ -3,7 +3,6 @@ import "./ProductPage.css";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firestore-config";
 import { IProduct } from "../../Interfaces/Interfaces";
-import { Link } from "react-router-dom";
 import SearchFilter from '../../components/SearchFilter';
 
 const ProductPage = () => {
