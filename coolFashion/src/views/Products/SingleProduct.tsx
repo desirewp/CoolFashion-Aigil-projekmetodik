@@ -4,7 +4,7 @@ import { db } from "../../../firestore-config";
 import { IProduct } from "../../Interfaces/Interfaces";
 import { Link, useParams } from "react-router-dom";
 import "./SingleProduct.css";
-import { ProductDB, ShoppingCart } from "../../Classes/classes";
+import { ProductDB } from "../../Classes/classes";
 import Share from "../../components/Share";
 
 const SingleProduct = () => {
