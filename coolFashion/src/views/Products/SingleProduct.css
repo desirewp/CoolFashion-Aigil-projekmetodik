@@ -1,4 +1,10 @@
-.prodbild{
-    width: 250px;
-    height: 300px;
+.prodbild {
+  width: 250px;
+  height: 300px;
+}
+
+/* Av någon anledning så lägg styling från ShoppingCart.css på de här knapparna den här klassen trumfar den stylingen */
+.single-btn {
+  width: auto;
+  font-size: 1rem;
 }

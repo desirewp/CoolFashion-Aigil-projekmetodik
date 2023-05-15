@@ -57,7 +57,7 @@ const SingleProduct = () => {
     <div className="container">
       <div className="product">
         <Link to="/products">
-          <button type="button">Tillbaka till produkter</button>
+          <button className="single-btn">Tillbaka till produkter</button>
         </Link>
         <br />
         <img
@@ -67,7 +67,7 @@ const SingleProduct = () => {
         />
         <h2>{product?.title}</h2>
         <p>{product?.description}</p>
-        <button onClick={addToCart}>Lägg till i varukorgen</button>
+        <button onClick={addToCart} className="single-btn">Lägg till i varukorgen</button>
      
         <div>
           <Share description={"Riktigt fett plagg!"} />
