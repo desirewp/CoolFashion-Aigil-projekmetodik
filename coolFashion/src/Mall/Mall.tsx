@@ -9,6 +9,7 @@ import Error404 from "../views/Error404/Error404";
 import ProductPage from "../views/Products/ProductPage"
 import SingleProduct from "../views/Products/SingleProduct";
 import Wishlist from "../views/Wishlist/Wishlist";
+import ShoppingCart from "../views/ShoppingCart/ShoppingCart";
 
 function Mall() {
   return (
@@ -18,6 +19,7 @@ function Mall() {
       <Routes>
         <Route path='/' element={<Landing/>}/>
         <Route path='/start' element={<Landing/>}/>
+        <Route path='/shoppingCart' element={<ShoppingCart/>}/>
         <Route path='/products' element={<ProductPage/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/admin' element={<Admin/>}/>
