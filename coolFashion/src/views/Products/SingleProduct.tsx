@@ -53,32 +53,11 @@ const SingleProduct = () => {
   };
 
 
-  // Flytta till vår varukorgSida
-  const removeFromCart = () => {
-    // Vi hämtar innehåll från cartItems
-    let exixtingCart = localStorage.getItem("cartItems");
-    // Vi konverterar cartitems (det som lagrats) till en {}[]
-    let objectArrExistingCart: ProductDB[] = JSON.parse(exixtingCart || "[]");
-    // tar bort det önskade objektet från Cart
-    updatedCart = objectArrExistingCart.filter(
-      (cart) => cart.id !== product.id
-    );
-
-    // Gör den nya cart till string
-    let stringAddToCart = JSON.stringify(updatedCart);
-    // Lagrar den nya carten på cartItems med produkten borttagen
-    localStorage.setItem("cartItems", stringAddToCart);
-  };
-
-  const emptyCart = () => {
-    localStorage.removeItem("cartItems");
-  };
-
   return (
     <div className="container">
       <div className="product">
         <Link to="/products">
-          <button type="button">Tillbaka till produkter</button>
+          <button className="single-btn">Tillbaka till produkter</button>
         </Link>
         <br />
         <img
@@ -88,9 +67,8 @@ const SingleProduct = () => {
         />
         <h2>{product?.title}</h2>
         <p>{product?.description}</p>
-        <button onClick={addToCart}>Lägg till i varukorgen</button>
-        <button onClick={removeFromCart}>Ta bort från varukorgen</button>
-        <button onClick={emptyCart}>Rensa varukorgen</button>
+        <button onClick={addToCart} className="single-btn">Lägg till i varukorgen</button>
+     
         <div>
           <Share description={"Riktigt fett plagg!"} />
         </div>
