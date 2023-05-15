@@ -4,12 +4,14 @@ import { db } from "../../../firestore-config";
 import { IProduct } from "../../Interfaces/Interfaces";
 import { Link, useParams } from "react-router-dom";
 import "./SingleProduct.css";
-import { ProductDB } from "../../Classes/classes";
+import { ProductDB, ShoppingCart } from "../../Classes/classes";
 import Share from "../../components/Share";
 
 const SingleProduct = () => {
   const [products, setProducts] = useState<ProductDB[]>([]);
   const [cart, setCart] = useState<ProductDB[]>([]);
+  let shoppingCart: ProductDB[] = [];
+  let updatedCart: ProductDB[] = [];
 
   const productCollectionRef = collection(db, "products");
 
@@ -24,17 +26,6 @@ const SingleProduct = () => {
     );
   };
 
-  useEffect(() => {
-    getProducts();
-
-    const test = localStorage.getItem("cartItems");
-    if (test) {
-      const object = JSON.parse(test);
-      setCart(object);
-      alert("alert, ALERT!" + object);
-    }
-  }, []);
-
   const { productTitle } = useParams();
   const serchResultProduct = products.filter(
     (product) => product.title === productTitle
@@ -42,17 +33,44 @@ const SingleProduct = () => {
   const product = serchResultProduct[0];
 
   useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(cart));
-  }, [cart]);
+    getProducts();
+  }, []);
+
 
   const addToCart = () => {
-    const updatedCart = [...cart, product];
-    setCart(updatedCart);
+    // Vi baserar den uppdaterade korgen på shopingCart (alltid tom)
+    updatedCart = [...shoppingCart, product];
+
+    // Vi hämtar innehåll från cartItems
+    let exixtingCart = localStorage.getItem("cartItems");
+    // Vi konverterar cartitems (det som lagrats) till en {}[]
+    let objectArrExistingCart = JSON.parse(exixtingCart || "[]");
+    // Vi slår ihop existerande + nya till en cart
+    let addToCart = [...objectArrExistingCart, ...updatedCart];
+    // Vi konverterar nya korgen till string
+    let stringAddToCart = JSON.stringify(addToCart);
+    // Vi pushar upp resultatet till local storage
+    localStorage.setItem("cartItems", stringAddToCart);
   };
 
   const removeFromCart = () => {
-    const updatedCart = cart.filter((cart) => cart.id !== product.id);
-    setCart(updatedCart);
+    // Vi hämtar innehåll från cartItems
+    let exixtingCart = localStorage.getItem("cartItems");
+    // Vi konverterar cartitems (det som lagrats) till en {}[]
+    let objectArrExistingCart: ProductDB[] = JSON.parse(exixtingCart || "[]");
+    // tar bort det önskade objektet från Cart
+    updatedCart = objectArrExistingCart.filter(
+      (cart) => cart.id !== product.id
+    );
+
+    // Gör den nya cart till string
+    let stringAddToCart = JSON.stringify(updatedCart);
+    // Lagrar den nya carten på cartItems med produkten borttagen
+    localStorage.setItem("cartItems", stringAddToCart);
+  };
+
+  const emptyCart = () => {
+    localStorage.removeItem("cartItems");
   };
 
   return (
@@ -70,7 +88,8 @@ const SingleProduct = () => {
         <h2>{product?.title}</h2>
         <p>{product?.description}</p>
         <button onClick={addToCart}>Lägg till i varukorgen</button>
-        <button onClick={removeFromCart}>Rensa varukorgen</button>
+        <button onClick={removeFromCart}>Ta bort från varukorgen</button>
+        <button onClick={emptyCart}>Rensa varukorgen</button>
         <div>
           <Share description={"Riktigt fett plagg!"} />
         </div>
