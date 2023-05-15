@@ -37,7 +37,7 @@ const SingleProduct = () => {
 
 
   const addToCart = () => {
-    // Vi baserar den uppdaterade korgen på shopingCart (alltid tom)
+    // Vi baserar den uppdaterade korgen på shopingCart (alltid tom) but 🤷‍♀️
     updatedCart = [...shoppingCart, product];
 
     // Vi hämtar innehåll från cartItems
