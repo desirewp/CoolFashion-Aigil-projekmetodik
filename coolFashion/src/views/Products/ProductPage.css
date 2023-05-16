@@ -1,4 +1,11 @@
 
+.container{
+    margin: 5rem 9.5rem 3rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 .product-field {
   display: flex;
   justify-content: center;

@@ -4,27 +4,26 @@ import { addDoc, collection } from "@firebase/firestore";
 import { db } from "../../../firestore-config";
 
 const Contact = () => {
-
   const [name, setName] = useState("");
   const [mail, setMail] = useState("");
   const [message, setMessage] = useState("");
-
-
 
   const contactCollectionRef = collection(db, "contact");
 
   const addNewMessage = async (e: React.FormEvent<HTMLFormElement>) => {
     e?.preventDefault();
-    await addDoc(contactCollectionRef, { name: name, mail: mail, message: message });
+    await addDoc(contactCollectionRef, {
+      name: name,
+      mail: mail,
+      message: message,
+    });
     setName("");
     setMail("");
     setMessage("");
-  }
-
-  
+  };
 
   return (
-    <>      
+    <div className="container">
       <h1>Skriv din fråga nedan i formuläret</h1>
       <div className="contact-container">
         <form onSubmit={(e) => addNewMessage(e)}>
@@ -58,7 +57,7 @@ const Contact = () => {
           <button type="submit">Skicka</button>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -26,7 +26,7 @@ const ProductPage = () => {
 
   return (
     <>
-      <div>
+      <div className="container">
         <h1>SÖK PRODUKT</h1>
         <SearchFilter products={products} />
       </div>

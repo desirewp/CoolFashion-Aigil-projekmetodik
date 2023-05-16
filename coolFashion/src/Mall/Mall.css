@@ -6,10 +6,19 @@
 
 .content-container {
   font-family: "Roboto", sans-serif;
-  padding: 50px 100px 50px 100px;  
+  margin-top: 60px;  
   flex: 1 0 auto;
 }
 
 .footer {
   flex-shrink: 0;
+}
+
+.bg-img{
+  height: 500px;
+  width: 100%;
+  background-image: url('../assets/hero.jpg');
+  background-size: cover;
+  background-repeat: none;
+  background-position: center;
 }

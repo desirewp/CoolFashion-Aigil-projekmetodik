@@ -27,7 +27,6 @@ const Admin = () => {
     const contactMessagesData = await getDocs(contactMsgCollectionRef);
     setContactMsg(
       contactMessagesData.docs.map((doc) => ({
-        
         ...(doc.data() as IContactMessage),
         id: doc.id,
       }))
@@ -77,8 +76,8 @@ const Admin = () => {
   });
 
   return (
-    <>
-      <h1>Jag är ADMIN</h1>
+    <div className="container">
+      <h1>Admin</h1>
       <div className="flex-row">
         {/* Kontaktmeddelanden */}
         <div className="container-frame">
@@ -165,7 +164,7 @@ const Admin = () => {
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

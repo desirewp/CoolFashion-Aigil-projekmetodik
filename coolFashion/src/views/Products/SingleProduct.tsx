@@ -3,10 +3,10 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firestore-config";
 import { IProduct } from "../../Interfaces/Interfaces";
 import { Link, useParams } from "react-router-dom";
-import "./SingleProduct.css";
 import { ProductDB } from "../../Classes/classes";
 import Share from "../../components/Share";
-import Wishlist from "../Wishlist/Wishlist";
+
+import "./SingleProduct.css";
 
 const SingleProduct = () => {
   const [products, setProducts] = useState<ProductDB[]>([]);
@@ -37,7 +37,7 @@ const SingleProduct = () => {
   }, []);
 
   const addToCart = () => {
-    // Vi baserar den uppdaterade korgen på shopingCart (alltid tom)
+    // Vi baserar den uppdaterade korgen på shopingCart (alltid tom) but 🤷‍♀️
     updatedCart = [...shoppingCart, product];
 
     // Vi hämtar innehåll från cartItems
@@ -94,6 +94,9 @@ const SingleProduct = () => {
         />
         <h2>{product?.title}</h2>
         <p>{product?.description}</p>
+        
+        <div className="flex-row">
+
         <button onClick={addToCart} className="single-btn">
           Lägg till i varukorgen
         </button>
@@ -105,6 +108,7 @@ const SingleProduct = () => {
         >
           Lägg till i önskelistan
         </button>
+          </div>
 
         <div>
           <Share description={"Riktigt fett plagg!"} />
