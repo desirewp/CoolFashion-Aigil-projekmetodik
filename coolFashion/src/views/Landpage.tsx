@@ -12,8 +12,6 @@ import pic3 from "../assets/blue jacket.jpg";
 import pic4 from "../assets/yellow hood.jpg";
 import pic5 from "../assets/GREYTSHIRT.jpg";
 
-import img1 from "../assets/img1.jpg";
-
 // Database Imports
 import { db } from "../../firestore-config";
 import { collection, getDocs } from "firebase/firestore";
