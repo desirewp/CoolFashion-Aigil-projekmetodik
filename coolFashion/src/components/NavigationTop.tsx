@@ -116,10 +116,12 @@ const NavigationTop = () => {
 
         <div>
           <span className="material-symbols-outlined">search</span>
-          <Link to='/shoppingCart'>
-          <span className="material-symbols-outlined">shopping_cart</span>
+          <Link to="/shoppingCart">
+            <span className="material-symbols-outlined">shopping_cart</span>
           </Link>
-          <span className="material-symbols-outlined">person</span>
+          <Link to="/wishlist">
+            <span className="material-symbols-outlined">person</span>
+          </Link>
         </div>
         <Link to="/admin" className="login-btn">
           Logga in

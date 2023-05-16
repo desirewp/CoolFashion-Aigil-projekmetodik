@@ -1,5 +1,6 @@
 import React from "react"
 import { useState } from 'react';
+import "./Share.css"
 
 interface ShareProps {
   description: string
@@ -29,7 +30,7 @@ function Share({description}: ShareProps) {
     </a>
 
     <div>
-      <button onClick={handleCopyClick}>
+      <button className="copylink" onClick={handleCopyClick}>
         {copied ? 'Kopierad!' : 'Kopiera Länk'}
       </button>
     </div>

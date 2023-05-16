@@ -8,6 +8,7 @@ import Contact from "../views/Contact/Contact";
 import Error404 from "../views/Error404/Error404";
 import ProductPage from "../views/Products/ProductPage"
 import SingleProduct from "../views/Products/SingleProduct";
+import Wishlist from "../views/Wishlist/Wishlist";
 import ShoppingCart from "../views/ShoppingCart/ShoppingCart";
 
 function Mall() {
@@ -22,6 +23,7 @@ function Mall() {
         <Route path='/products' element={<ProductPage/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/admin' element={<Admin/>}/>
+        <Route path='/wishlist' element={<Wishlist/>}/>
         <Route path='/products/:productTitle' element={<SingleProduct/>}/>
         <Route path='*' element={<Error404/>}/>
       </Routes>

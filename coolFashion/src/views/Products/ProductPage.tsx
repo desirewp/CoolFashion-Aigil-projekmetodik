@@ -3,7 +3,7 @@ import "./ProductPage.css";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firestore-config";
 import { IProduct } from "../../Interfaces/Interfaces";
-import SearchFilter from '../../components/SearchFilter';
+import SearchFilter from "../../components/SearchFilter";
 
 const ProductPage = () => {
   const productCollectionRef = collection(db, "products");
@@ -25,14 +25,12 @@ const ProductPage = () => {
   }, []);
 
   return (
-
     <>
-    <div>
-      <h1>SÖK PRODUKT</h1>
-      <SearchFilter products={products} />
-    </div>
-    
-      </>
+      <div>
+        <h1>SÖK PRODUKT</h1>
+        <SearchFilter products={products} />
+      </div>
+    </>
   );
 };
 
