@@ -2,7 +2,7 @@ footer {
     padding: 10px;
     display: flex;
     justify-content: space-around;
-    background-color: #C2A5FF;
+    background-color: #C2A5FF;    
 }
 .footer-column {
     display: flex;

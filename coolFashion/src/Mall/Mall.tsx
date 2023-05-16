@@ -28,7 +28,9 @@ function Mall() {
           <Route path='*' element={<Error404 />} />
         </Routes>
       </div>
-      <Footer></Footer>
+      <div className="footer">
+        <Footer></Footer>
+      </div>
     </section>
   );
 }
