@@ -57,7 +57,7 @@
   background: #d8ffca;
   width: 100%;
   text-align: center;
-  
+
   margin: 1.5rem 0;
   padding: 2rem 2rem;
 }
@@ -88,26 +88,25 @@
   background-color: #d8ffca;
 }
 
-.four-by-four{
+.four-by-four {
   width: 100%;
   margin: 1.5rem 0;
-
 }
 .twopicone {
   display: flex;
   justify-content: space-between;
-  
+
   height: 250px;
   width: 100%;
   margin-top: 1rem;
 }
 
-.img{
+.img {
   width: 49%;
   overflow: hidden;
   background-size: cover;
   background-position: center;
-  
+
   display: flex;
   align-items: end;
   justify-content: end;
@@ -115,55 +114,40 @@
   align-items: end;
 }
 
-.img1{
-  background-image: url('../assets/img1.jpg');
-  justify-content: end;
-  
-}
-
-.img2{
-  background-image: url('../assets/img2.jpg');
-  justify-content: start;
-}
-
-.img3{
-  background-image: url('../assets/img3.jpg');
+.img1 {
+  background-image: url("../assets/img1.jpg");
   justify-content: end;
 }
 
-.img4{
-  background-image: url('../assets/img4.jpg');
+.img2 {
+  background-image: url("../assets/img2.jpg");
   justify-content: start;
 }
 
+.img3 {
+  background-image: url("../assets/img3.jpg");
+  justify-content: end;
+}
 
+.img4 {
+  background-image: url("../assets/img4.jpg");
+  justify-content: start;
+}
 
 .specialtext {
   background: #d8ffca;
   font-size: 1.3rem;
   font-weight: 600;
 }
-.img1>.specialtext {
+.img1 > .specialtext {
   padding: 0 15px 0 5px;
- }
- .img2>.specialtext {
+}
+.img2 > .specialtext {
   padding: 0 5px 0 15px;
- }
-
-
-
+}
 
 .click {
   cursor: pointer;
-}
-
-
-.twopictwo {
-  display: flex;
-  width: 800px;
-  height: 200px;
-  padding: 8px;
-  justify-content: space-between;
 }
 
 .bildotext {
@@ -174,16 +158,17 @@
   align-items: end;
 }
 
-
 .bannertwo {
   display: flex;
-  background-image: url(../assets/placeholder.jpg);
-  width: 100%;
-  height: 250px;
-  margin-top: 30px;
   justify-content: center;
+  align-items: end;
+  background-image: url(../assets/banner2.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 450px;
+  margin-top: 30px;
 }
-
 
 .slider img {
   width: 100%;

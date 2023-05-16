@@ -1,7 +1,13 @@
+
+.container{
+    margin: 5rem 9.5rem 3rem;
+    display: flex;
+    justify-content: center;
+}
+
 hr{
     margin: 10px 0;
 }
-
 
 select{
     width: 100%;

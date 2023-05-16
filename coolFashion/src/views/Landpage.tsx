@@ -135,9 +135,9 @@ const Landing = () => {
           </div>
         </div>
 
-        {/* <div className="bannertwo click">
+        <div className="bannertwo click">
           <h2 className="skate">FYNDA HÄR</h2>
-        </div> */}
+        </div>
       </div>
     </div>
   );
