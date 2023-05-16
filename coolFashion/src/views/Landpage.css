@@ -68,30 +68,95 @@
   margin-top: 1.5rem;
 }
 
+.banner {
+  width: 100%;
+  height: 350px;
+
+  display: flex;
+  justify-content: center;
+  align-items: end;
+
+  background-image: url(../assets/skate-here.jpg);
+  background-size: cover;
+  background-position: center;
+
+  margin-top: 40px;
+}
+
+.skate {
+  margin-bottom: 20px;
+  background-color: #d8ffca;
+}
+
+.four-by-four{
+  width: 100%;
+  margin: 1.5rem 0;
+
+}
+.twopicone {
+  display: flex;
+  justify-content: space-between;
+  
+  height: 250px;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.img{
+  width: 49%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  display: flex;
+  align-items: end;
+}
+
+.img1{
+  background-image: url('../assets/img1.jpg');
+  justify-content: end;
+  
+}
+
+.img2{
+  background-image: url('../assets/img2.jpg');
+  justify-content: start;
+}
+
+.img3{
+  background-image: url('../assets/img3.jpg');
+  justify-content: end;
+}
+
+.img4{
+  background-image: url('../assets/img4.jpg');
+  justify-content: start;
+}
+
+
+
+.specialtext {
+  background: #d8ffca;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.img1>.specialtext {
+  padding: 0 15px 0 5px;
+ }
+ .img2>.specialtext {
+  padding: 0 5px 0 15px;
+ }
+
+
+
+
 .click {
   cursor: pointer;
 }
 
-.banner {
-  display: flex;
-  background-image: url(../assets/placeholder.jpg);
-  width: 100%;
-  height: 250px;
-  margin-top: 40px;
-  justify-content: center;
-}
-.skate {
-  margin-top: 200px;
-}
-
-.twopicone {
-  display: flex;
-  width: 800px;
-  height: 200px;
-  padding: 8px;
-  margin-top: 30px;
-  justify-content: space-between;
-}
 
 .twopictwo {
   display: flex;
@@ -109,9 +174,6 @@
   align-items: end;
 }
 
-.specialtext {
-  margin-left: 12px;
-}
 
 .bannertwo {
   display: flex;

@@ -7,13 +7,15 @@ const Slider = () => {
   return (
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={10}
-      slidesPerView={8}
+      spaceBetween={15}
+      slidesPerView={6}
       navigation
       pagination={{ clickable: true }}
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
     >
+
+
       <SwiperSlide>
         <img src="/src/assets/placeholder round.avif" alt="slideimg" />
         <p>NYHETER</p>
@@ -54,14 +56,7 @@ const Slider = () => {
         <img src="/src/assets/placeholder round.avif" alt="slideimg" />
         <p>TSHIRT</p>
       </SwiperSlide>
-      <SwiperSlide>
-        <img src="/src/assets/placeholder round.avif" alt="slideimg" />
-        <p>TRÖJA</p>
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="/src/assets/placeholder round.avif" alt="slideimg" />
-        <p>BYXOR</p>
-      </SwiperSlide>
+
     </Swiper>
   );
 };
