@@ -21,6 +21,7 @@ const Landing = () => {
   const productCollectionRef = collection(db, "products");
   const [products, setProducts] = useState<ProductDB[]>([]);
   const [fiveProducts, setFiveProducts] = useState<ProductDB[]>([]);
+
   // Hämta produkter
   const getProducts = async () => {
     const productData = await getDocs(productCollectionRef);
@@ -29,7 +30,8 @@ const Landing = () => {
         ...(doc.data() as ProductDB),
       }))
     );
-    setFiveProducts(products.slice(0, 4));
+    setFiveProducts(products.slice(0, 5));
+    console.log(fiveProducts);
   };
 
   const list: ListItem[] = [
