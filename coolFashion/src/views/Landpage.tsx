@@ -1,17 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Landpage.css";
 import Slider from "../components/Slider";
 import Bild from "../assets/placeholder.jpg";
 import LastFiveItems, { ListItem } from "../components/LastFiveItems";
 import pic1 from "../assets/dino.jpg";
 import pic2 from "../assets/dfh.jpg";
-import pic3 from "../assets/blue jacket.jpg"
-import pic4 from "../assets/yellow hood.jpg"
-import pic5 from "../assets/GREYTSHIRT.jpg"
-
-
+import pic3 from "../assets/blue jacket.jpg";
+import pic4 from "../assets/yellow hood.jpg";
+import pic5 from "../assets/GREYTSHIRT.jpg";
+import { db } from "../../firestore-config";
+import { collection, getDocs } from "firebase/firestore";
+import { IProduct } from "../Interfaces/Interfaces";
+import { ProductDB } from "../Classes/classes";
 
 const Landing = () => {
+  const productCollectionRef = collection(db, "products");
+  const [products, setProducts] = useState<ProductDB[]>([]);
+  const [fiveProducts, setFiveProducts] = useState<ProductDB[]>([]);
+  // Hämta produkter
+  const getProducts = async () => {
+    const productData = await getDocs(productCollectionRef);
+    setProducts(
+      productData.docs.map((doc) => ({
+        ...(doc.data() as ProductDB),
+      }))
+    );
+    setFiveProducts(products.slice(0, 4));
+  };
+
   const list: ListItem[] = [
     {
       id: 1,
@@ -50,53 +66,43 @@ const Landing = () => {
     },
   ];
 
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  const productRowElement = fiveProducts.map((product) => {
+    return (
+      <div className="product click" key={product.id}>
+        <img
+          className="product-img"
+          src={product.imageUrl}
+          alt={product.title}
+        />
+        <h4>{product.title}</h4>
+        <h5>1000 kr</h5>
+      </div>
+    );
+  });
+
   return (
     <div className="Container">
+      <div className="picholder">
+        <h3 className="freeship">
+          Gratis frakt på alla beställningar under maj!
+        </h3>
+      </div>
       <div className="Landing-start">
-        <div className="picholder">
-          <div className="pic click">
-            <h3 className="freeship">Free Shipping & Returns</h3>
-          </div>
-        </div>
-        <div className="bildrad">
-          <div className="bildopris click">
-            <img className="bildoprisbild" src={Bild} alt="" />
-            <h5>produkt</h5>
-            <h4>1000 kr</h4>
-          </div>
-          <div className="bildopris click">
-            <img className="bildoprisbild" src={Bild} alt="" />
-            <h5>produkt</h5>
-            <h4>2000 kr</h4>
-          </div>
-          <div className="bildopris click">
-            <img className="bildoprisbild" src={Bild} alt="" />
-            <h5>produkt</h5>
-            <h4>3000 kr</h4>
-          </div>
-          <div className="bildopris click">
-            <img className="bildoprisbild" src={Bild} alt="" />
-            <h5>produkt</h5>
-            <h4>4000 kr</h4>
-          </div>
-
-          <div className="bildopris click">
-            <img className="bildoprisbild" src={Bild} alt="" />
-            <h5>produkt</h5>
-            <h4>5000 kr</h4>
+        <div className="rad">{productRowElement}</div>
+        <div className="news">
+          <h2>Nyheter!</h2>
+          <div className="rad">
+            <LastFiveItems list={list} />
           </div>
         </div>
 
-        <h2>Nyheter!</h2>
-        <div>
-          <LastFiveItems list={list} />
-        </div>
-
-        {/* 
-        Slider
-        Slider
-        Slider*/}
+        {/* Slider Slider Slider*/}
         <div className="slider click">
+          <h2>Populära kategorier</h2>
           <Slider></Slider>
         </div>
 
