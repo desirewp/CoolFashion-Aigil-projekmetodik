@@ -16,18 +16,17 @@ function Mall() {
     <section className="frame">
       <NavigationTop></NavigationTop>
       <div className="content-container">
-      <Routes>
-        <Route path='/' element={<Landing/>}/>
-        <Route path='/start' element={<Landing/>}/>
-        <Route path='/shoppingCart' element={<ShoppingCart/>}/>
-        <Route path='/products' element={<ProductPage/>}/>
-        <Route path='/contact' element={<Contact/>}/>
-        <Route path='/admin' element={<Admin/>}/>
-        <Route path='/wishlist' element={<Wishlist/>}/>
-        <Route path='/products/:productTitle' element={<SingleProduct/>}/>
-        <Route path='*' element={<Error404/>}/>
-      </Routes>
-
+        <Routes>
+          <Route path='/' element={<Landing />} />
+          <Route path='/start' element={<Landing />} />
+          <Route path='/shoppingCart' element={<ShoppingCart />} />
+          <Route path='/products' element={<ProductPage />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/admin' element={<Admin />} />
+          <Route path='/wishlist' element={<Wishlist />} />
+          <Route path='/products/:productTitle' element={<SingleProduct />} />
+          <Route path='*' element={<Error404 />} />
+        </Routes>
       </div>
       <Footer></Footer>
     </section>
