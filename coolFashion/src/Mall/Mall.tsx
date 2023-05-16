@@ -14,6 +14,7 @@ import ShoppingCart from "../views/ShoppingCart/ShoppingCart";
 function Mall() {
   return (
     <section className="frame">
+      <NavigationTop></NavigationTop>
       <div className="content-container">
         <Routes>
           <Route path='/' element={<Landing />} />
